@@ -1,0 +1,19 @@
+{
+    "basic": [
+        {
+            "npx react-create-app <project_name> ": "npx react-create-app simple_react"
+        }
+    ],
+    "install via vite": [
+        {
+            
+            "Installation ": "npm create vite@latest  vite_clean_proj",
+            "package Install ": "npm install",
+            " run project": "npm run dev",
+            "reference":""
+        }
+    ],
+    "defination": {
+        "npx": "Node package Executure"
+    }
+}

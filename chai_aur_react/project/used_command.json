@@ -1,0 +1,5 @@
+{
+    "create project": "npx create-react-app simple",
+    "create project with vite":" npm create vite@latest  vite_clean_proj",
+    "install lower version on npm 8": " npm install -g npm@8"
+}

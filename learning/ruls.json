@@ -1,0 +1,19 @@
+{
+    "vite": [
+        "vite does not use react-script package to add react generated pakaage"
+    ],
+    "JSX": [
+        "Jsx only return one element  <> </> . It is not return <p> and </p> but inside you can addd multiple [fragment]  ",
+        "When you add Element in JSX it should have with Camle case else it give error ",
+        "IN RETRUN OF JSX YOU CAN ONLY USE `EVALUETED EXPRESSION`  return( <> <p> hello {username}</p> </>)  but you can not use {if(true) username} "
+    ],
+    ".js": [
+        "Here also use element with camle case . it does not give any error but its would not work "
+    ],
+    "button on click ever ": [
+        {
+            "<button onClick={()=>decry_counter(twt)}>": "Alway use function defination not function , coz it retrun value  (dont use onClick={custfunction()} ) ",
+            "  let [count, setCount] = useState(0) ": "if you use multiple time  setCount(count + 1)  then it increase only once so always use  setCount((count)=>count-1)"
+        }
+    ]
+}
