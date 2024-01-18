@@ -6,13 +6,30 @@
     ],
     "install via vite": [
         {
-            
             "Installation ": "npm create vite@latest  vite_clean_proj",
             "package Install ": "npm install",
             " run project": "npm run dev",
-            "reference":""
+            "reference": "https://vitejs.dev/guide/"
         }
     ],
+    "install vai tailwind": {
+        "REF":"https://tailwindcss.com/docs/guides/vite",
+        "first install via vite": "npm create vite@latest tailwind_react",
+        "second": "npm install -D tailwindcss",
+        "third": "npx tailwindcss init",
+        "UpDATE CONFIG FILE ": "tailwind.config.js file.",
+        "CONTENT": {
+            "CO": [
+                "./src/**/*.{html,js}"
+            ],
+            "ADD INTO FILES": [
+                "@tailwind base;",
+                "@tailwind components;",
+                "@tailwind utilitie"
+            ]
+        },
+        "refernce": "https://tailwindcss.com/"
+    },
     "defination": {
         "npx": "Node package Executure"
     }
