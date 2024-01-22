@@ -1,6 +1,6 @@
 {
     "maxNumber = Math.max(...arr);": "GET max number",
-    "minNumber = Math.min(...arr);":"Get min number "
-    
+    "minNumber = Math.min(...arr);":"Get min number ",
+    "":""
 
 }

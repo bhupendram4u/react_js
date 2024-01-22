@@ -1,0 +1,9 @@
+{
+    "unit_test": {
+        "desc": "Mysql mocking and testing ",
+        "command": [
+            "npm install express mysql2",
+            "npm install --save-dev jest supertest mysql2"
+        ]
+    }
+}
