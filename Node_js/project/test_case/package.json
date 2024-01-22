@@ -1,0 +1,19 @@
+{
+  "name": "test_case",
+  "version": "1.0.0",
+  "description": "Testing unit case package with jest test cases",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "bhupendra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.7.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}
