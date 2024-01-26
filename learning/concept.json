@@ -1,0 +1,18 @@
+{
+    "React": {
+        "JSX": {
+            "How React work ": "Basically react is creating DOM Html atributes via json propeerty . We can also create same thing without React. We need to create json of html element property and value and in javascirpt you can create element and append or insert in dom element. using JSON . ",
+            "BABLE Role ": "This above json we can write in different way. which is understandable and readble in function this formate in JSX  function Myapp(){ return(<div><h1>hello world</h1></div>)} and this formate is converted(Parsing) in json by bable. (this process is done in backend)",
+            "Bable Path":"Bable actully parse code into optimise json formate. You can check in rect liabrary [react/packages/react/src/jsx/reactJSXElement.js] (JSON Formate fomate for attributes element)",
+            "USE":"You can this JSON object in direct rendor method . No </<Myapp> or Myapp() ",
+            "Does":"In jsx file always use Evaluted Expression  function MyApp(){const uname=test  return (<><h1> my name {uname}</h1>) }"
+        },
+        "React-fiber-architecture":"",
+        "onClick()":"WHen you use onClick Event on button then alway passed callback function i.e. onClick={()=>setCounter('red')} insted onClick=setCounter(red)[bcoz when you use this kind of function then you can't use parameter ]"
+    },
+    "Hooks":{
+        "#3[counter,setCounter]=useState":"earlier we direct use setCounter(counter+1) but its throwing issue when we use multiple setCounter in same event . It actully execute only once. Bcoz as per fiber architecture it send event on batches. setCounter function also has on call back function  like . setCounter((preCounter)=>{preCounter+1}) then it work as per expectation  "
+    }
+
+    
+}
