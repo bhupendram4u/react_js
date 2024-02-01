@@ -1,6 +1,9 @@
+["Block Scope","Shadowing"]
+
 {
-    "Type Coersion" :{
-        "implicite Coersion":"",
-        "explicite Coersion":""
-    }
+    "Type Coersion": {
+        "implicite Coersion": "",
+        "explicite Coersion": ""
+    },
+    "curring": "",
 }

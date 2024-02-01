@@ -5,7 +5,7 @@ if ([]) {
 }
 //This works!
 // ------------------
-if ([]) {
+if (0) {
     console. log( 'This works!');
  }
 
