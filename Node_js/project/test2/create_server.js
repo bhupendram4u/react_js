@@ -5,7 +5,7 @@ process.on("uncaughtException",(err)=>{
     process.exit(1);
 })
  
-console.log(`#Current directory: ${cwd()}`);
+console.log(`#Current directory: ${process.cwd()}`);
 
 
 
