@@ -3,10 +3,11 @@ const person={
     name:"bhupendra",
     last:"mestry",
     hello(){
+        let parent_var_flm="testing"
         const fullname=()=>{
             console.log(`This key word in person ahellwo -. full anem ${this}`)
             // This key word point to enclosing lexical context
-            return `${this.name} ${this.last}`
+            return `${this.name} ${this.last} ${this.parent_var_flm}`
         }
      console.log(`my full name ${fullname()}`)   
     }
@@ -27,7 +28,7 @@ function check_this(){
 
 person.hello();
 console.log(`\n----------`)
-test.access_lexical();
+// test.access_lexical();
 console.log(`\n----------`)
 
-check_this()
+// check_this()

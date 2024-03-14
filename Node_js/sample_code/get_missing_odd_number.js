@@ -16,4 +16,11 @@ let brk=true;
      }
      
   }
+  const start=performance.now();
 console.log(`missing Odd Number : [${missing_odd}]`);
+const end=performance.now();
+const log=console.log
+const arr1=[1,3,4,5]
+log(` Find odd with filter menthode `,arr1.filter((val)=>val%2!=0))
+
+log(` Excecution Timing ${end-start} miliseconds`)

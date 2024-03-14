@@ -26,3 +26,17 @@ let userResponse=  {
   
   console.log(state);
   console.log(userResponse?.mother?.mom?.villege[0]?.state)
+
+  const log=console.log
+
+  const d={'name':"test",lastname:"mestry"}
+  
+
+
+  d.name="changes"
+log(d);
+
+
+// min : mininumn length of otp & max: maximum length of otp
+const getOtp=(min=100000,max=999999)=>Math.floor((Math.random()*max-min)+min)
+log(` Your OTP is ${getOtp(1000,9999)}`)
