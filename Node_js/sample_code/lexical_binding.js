@@ -2,12 +2,13 @@
 const person={
     name:"bhupendra",
     last:"mestry",
-    hello(){
+    hello:function(){
         let parent_var_flm="testing"
-        const fullname=()=>{
+       const fullname=()=>{
+       //     function fullname(){
             console.log(`This key word in person ahellwo -. full anem ${this}`)
             // This key word point to enclosing lexical context
-            return `${this.name} ${this.last} ${this.parent_var_flm}`
+            return `${this.name} ${this.last} ${parent_var_flm}`
         }
      console.log(`my full name ${fullname()}`)   
     }
