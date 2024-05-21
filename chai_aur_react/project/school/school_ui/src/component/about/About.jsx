@@ -21,6 +21,7 @@ function About() {
       const chunkNumber = start / CHUNK_SIZE + 1;
 
       const formData = new FormData();
+      console.log(`Form Data =>${chunk}`)
       formData.append('file', chunk);
 
       try {

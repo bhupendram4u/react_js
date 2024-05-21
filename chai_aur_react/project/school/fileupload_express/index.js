@@ -50,7 +50,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
     return res.status(400).send('No file uploaded.');
   }
 
-  console.log(`Rewquest received for file ${file.filename}`)
+  console.log(`Rewquest received for file ${file.filename} \n`)
   
   const currentChunkPath = path.join(uploadDir, file.filename);
   const finalFilePath = path.join(uploadDir, fileName);
