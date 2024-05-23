@@ -1,0 +1,101 @@
+In Node.js, a child process is a mechanism that allows you to create new processes and execute code in them, enabling the parent process (the main Node.js application) to run multiple tasks simultaneously without being blocked. This is particularly useful for CPU-intensive tasks or operations that might otherwise block the event loop and degrade the performance of the main application.
+
+Node.js provides several modules to handle child processes, with the most commonly used being:
+
+child_process.exec():    
+    Executes a command in a shell and buffers the output.
+    Suitable for running shell commands and capturing the output.
+
+####
+```
+            const { exec } = require('child_process');
+            
+            exec('ls -lh', (error, stdout, stderr) => {
+              if (error) {
+                console.error(`exec error: ${error}`);
+                return;
+              }
+              console.log(`stdout: ${stdout}`);
+              console.error(`stderr: ${stderr}`);
+            });
+```
+###
+----
+child_process.execFile():
+    
+    Similar to exec, but does not execute a command in a shell.
+    Directly executes a binary or script file.
+    More efficient and secure when you don't need shell features.
+###
+```
+                const { execFile } = require('child_process');        
+                
+                execFile('node', ['--version'], (error, stdout, stderr) => {
+                  if (error) {
+                    console.error(`execFile error: ${error}`);
+                    return;
+                  }
+                  console.log(`stdout: ${stdout}`);
+                  console.error(`stderr: ${stderr}`);
+                });
+```
+------
+child_process.spawn():
+    
+    Launches a new process with a given command.
+    Provides more control over the input and output streams compared to exec.
+    Suitable for handling large amounts of data or streaming data between processes.
+    Example:
+ 
+                const { spawn } = require('child_process');
+                
+                const ls = spawn('ls', ['-lh', '/usr']);
+                
+                ls.stdout.on('data', (data) => {
+                  console.log(`stdout: ${data}`);
+                });
+                
+                ls.stderr.on('data', (data) => {
+                  console.error(`stderr: ${data}`);
+                });
+                                
+                ls.on('close', (code) => {
+                  console.log(`child process exited with code ${code}`);
+                });
+
+
+
+***
+child_process.spawn()
+The spawn method launches a new process with a given command. It is generally used for running shell commands or executing programs.
+
+Key Characteristics:
+        Command Execution: Suitable for executing any shell command or external application.
+        Streams: Provides streams (stdin, stdout, and stderr) for communication between the parent and child processes.
+        No IPC by Default: Does not set up an inter-process communication (IPC) channel by default.
+        Non-Node.js Processes: Can be used to start any executable, not just Node.js scripts.
+Use Cases:
+        Running shell commands or external programs.
+        Handling large amounts of data by streaming.
+
+                
+----
+child_process.fork():
+    
+    A specialized version of spawn for creating Node.js processes.
+    It spawns a new Node.js process and establishes an IPC (Inter-Process Communication) channel between the parent and child process.
+    Useful for running separate Node.js scripts or modules.
+###            Example:
+
+            const { fork } = require('child_process');
+            
+            const child = fork('childScript.js');
+            
+            child.on('message', (msg) => {
+              console.log('Message from child', msg);
+            });
+            
+            child.send({ hello: 'world' });
+###
+Each method is designed for different use cases, giving you flexibility in managing child processes in Node.js applications. This allows you to handle tasks more efficiently, particularly when dealing with asynchronous operations or CPU-bound tasks that could otherwise block the event loop.    
+    

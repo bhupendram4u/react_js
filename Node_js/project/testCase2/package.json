@@ -1,0 +1,25 @@
+{
+  "name": "testcase2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.24.1",
+    "express": "^4.19.2",
+    "jest": "^29.7.0",
+    "mongoose": "^8.3.4",
+    "supertest": "^7.0.0",
+    "update": "^0.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
+    "babel-jest": "^29.7.0"
+  },
+  "type": "module"
+}
