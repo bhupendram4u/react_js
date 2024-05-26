@@ -26,6 +26,9 @@ child_process.execFile():
     Similar to exec, but does not execute a command in a shell.
     Directly executes a binary or script file.
     More efficient and secure when you don't need shell features.
+
+
+
 ###
 ```
                 const { execFile } = require('child_process');        
@@ -45,6 +48,20 @@ child_process.spawn():
     Launches a new process with a given command.
     Provides more control over the input and output streams compared to exec.
     Suitable for handling large amounts of data or streaming data between processes.
+
+  ***
+child_process.spawn()
+    The spawn method launches a new process with a given command. It is generally used for running shell commands or executing programs.
+
+    Key Characteristics:
+            Command Execution: Suitable for executing any shell command or external application.
+            Streams: Provides streams (stdin, stdout, and stderr) for communication between the parent and child processes.
+            No IPC by Default: Does not set up an inter-process communication (IPC) channel by default.
+            Non-Node.js Processes: Can be used to start any executable, not just Node.js scripts.
+    Use Cases:
+            Running shell commands or external programs.
+            Handling large amounts of data by streaming.
+
     Example:
  
                 const { spawn } = require('child_process');
@@ -65,18 +82,6 @@ child_process.spawn():
 
 
 
-***
-child_process.spawn()
-The spawn method launches a new process with a given command. It is generally used for running shell commands or executing programs.
-
-Key Characteristics:
-        Command Execution: Suitable for executing any shell command or external application.
-        Streams: Provides streams (stdin, stdout, and stderr) for communication between the parent and child processes.
-        No IPC by Default: Does not set up an inter-process communication (IPC) channel by default.
-        Non-Node.js Processes: Can be used to start any executable, not just Node.js scripts.
-Use Cases:
-        Running shell commands or external programs.
-        Handling large amounts of data by streaming.
 
                 
 ----
@@ -85,6 +90,17 @@ child_process.fork():
     A specialized version of spawn for creating Node.js processes.
     It spawns a new Node.js process and establishes an IPC (Inter-Process Communication) channel between the parent and child process.
     Useful for running separate Node.js scripts or modules.
+
+****
+    The fork method is a specialized version of spawn designed specifically for creating new Node.js processes. It spawns a new Node.js instance and sets up an IPC channel between the parent and child processes.
+
+    Key Characteristics:
+          Node.js Only: Specifically used to spawn new Node.js processes.
+          IPC Channel: Sets up an IPC channel automatically, allowing for easy message passing between parent and child processes.
+          Module Execution: Executes a Node.js module, with the child process being able to require other modules.
+    Use Cases:
+          Running child processes that are also Node.js scripts.
+          Applications that require communication between parent and child processes using message passing.
 ###            Example:
 
             const { fork } = require('child_process');
