@@ -1,6 +1,6 @@
 const { isMainThread, parentPort, Worker, workerData } = require('worker_threads');
 
-function factorial(n){
+function factorial(n) {
     if (n === 0 || n === 1) {
         return 1;
     }
@@ -10,7 +10,7 @@ function factorial(n){
 
 if (isMainThread) { // If main thread, then create a worker thread for each task.
     const timeoutDuration = 1000
-    const task = [6, 13, 17 ,22]
+    const task = [6, 13, 17, 22]
     const workers = []
     for (let i = 0; i < task.length; i++) {
         const worker = new Worker(__filename, {
@@ -25,10 +25,7 @@ if (isMainThread) { // If main thread, then create a worker thread for each task
         worker.on('error', (error) => {
             console.error(error)
         })
-        worker.on('exit', (code) => {
-            console.log(`Worker exited with code ${code}`)
-        })
-
+        
         const timeoutId = setTimeout(() => {
             console.log(`#parent Timeout reached for worker ${i + 1}. Terminating.`);
             worker.terminate();
