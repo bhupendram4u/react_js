@@ -2,7 +2,7 @@ const { spawn } = require('child_process');
 const path = require('path');
 
 // Start the server.js process
-const serverProcess = spawn('node', [path.resolve(__dirname, 'server.js')]);
+const serverProcess = spawn('node', [path.resolve(__dirname, 'report_exc_file.js')]);
 
 serverProcess.stdout.on('data', (data) => {
   console.log(`Server stdout: ${data}`);
