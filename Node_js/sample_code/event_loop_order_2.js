@@ -4,18 +4,17 @@ setTimeout(() => console.log(4));  // 5
 
 Promise.resolve().then(() => console.log(2));   //3
 
+Promise.resolve().then(() => setTimeout(() => console.log(6))); //8  
 
 Promise.resolve().then(() => console.log(3)); //4
-Promise.resolve().then(() => setTimeout(() => console.log(6))); //8  
 process.nextTick(()=>console.log("2.3"))   //2
 setTimeout(() => console.log(5));  //6
 Promise.resolve().then(() => setTimeout(() => console.log(9))); //8  
 setImmediate(() => console.log(7)); //7
 
-// Promise.resolve().then(() => setTimeout(() => console.log(11))); //8  
 process.nextTick(()=>console.log("3.3"))   //2
 
-// Promise.resolve().then(() => setTimeout(() => console.log(10))); //8  
+Promise.resolve().then(() => setTimeout(() => console.log(10))); //8  
 
 console.log(1);       //1
 

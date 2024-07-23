@@ -15,3 +15,15 @@ let everying = arr.reduce(inner_reduce, op)
 
 console.log("##Use of Reduce Methode ##: \n")
 console.log(everying)
+
+
+
+
+/*
+
+arr.reduce((acc,cur,index)=>{
+acc.min=cr<acc.min ?cr:acc.min==0?cur:acc.min
+accsum=acc.sum+cur;
+ 
+},{min:0,max:0,avg:0,sum:0})
+*/
