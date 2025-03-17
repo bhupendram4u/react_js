@@ -24,9 +24,10 @@ let p4 =new Promise((resolve,reject)=>{
 })
 
 Promise.all([p1,p2,p3,p4]).then((data)=>{
-    console.log('promise=>',data)
-}).catch((err)=>{
-    console.log(err)
+    console.log('promise all=>',data)
+}).catch((err)=>{ 
+    console.log('promise all error=>',err)
+    
 })
 
 
