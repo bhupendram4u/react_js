@@ -9,7 +9,9 @@ Promise.resolve().then(() => console.log(3));
 setTimeout(() => console.log(5));
 
 console.log(1); 
-
+fs.readFile('file.txt', 'utf8', () => {
+    console.log('📘 File read callback');
+  });
 
 
 // pro q 2, timer-6, 3   
