@@ -1,34 +1,50 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
-import Test from './Test'
+import UseStateExample from './useState/UseStateExample'
+import UseEffectExample from './useEffect/UseEffectExample'
+import UseMemoExample from './useMemo/UseMemoExample'
+import UseRefExample from './useRef/UseRefExample'
+import UseContextExample from './useContext/UseContextExample'
+import UseReducerExample from './useReducer/UseReducerExample'
+import UseLayoutEffectExample from './useLayoutEffect/UseLayoutEffectExample'
+import UseImperativeHandleExample from './useImperativeHandle/UseImperativeHandleExample'
 import Xcallback from './useCallback/Xcallback'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeTab, setActiveTab] = useState('useState')
 
+  const tabs = [
+    { id: 'useState', label: 'useState', component: UseStateExample },
+    { id: 'useEffect', label: 'useEffect', component: UseEffectExample },
+    { id: 'useMemo', label: 'useMemo', component: UseMemoExample },
+    { id: 'useRef', label: 'useRef', component: UseRefExample },
+    { id: 'useContext', label: 'useContext', component: UseContextExample },
+    { id: 'useReducer', label: 'useReducer', component: UseReducerExample },
+    { id: 'useCallback', label: 'useCallback', component: Xcallback },
+    { id: 'useLayoutEffect', label: 'useLayoutEffect', component: UseLayoutEffectExample },
+    { id: 'useImperativeHandle', label: 'useImperativeHandle', component: UseImperativeHandleExample },
+  ]
 
-  useEffect(() => {
-    // console.log('UseEFFECTOF Parent')
-  }, [])
-
-
-  const handleForm = (e) => {
-    console.log(e.target.name)
-    setCount((count) => count + 1);
-  }
+  const ActiveComponent = tabs.find(tab => tab.id === activeTab)?.component
 
   return (
-    <>
-      {/* <p className="read-the-docs">
-        Count Value {count}
-        <input type="button"  onClick={handleForm} value="Click" name="ButtonInput" />
-      </p> */}
-
-      {/* <Test /> */}
-      Click on the Vite and React logos to learn more
-      <hr />
-      <Xcallback />
-    </>
+    <div className="app">
+      <h1>React Hooks Testing</h1>
+      <div className="tabs">
+        {tabs.map(tab => (
+          <button
+            key={tab.id}
+            className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+      <div className="tab-content">
+        {ActiveComponent && <ActiveComponent />}
+      </div>
+    </div>
   )
 }
 

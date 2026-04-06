@@ -1,17 +1,24 @@
-// import React from 'react';
+import { memo, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const ChildComponent = ({ onClick }) => {
-    console.log("Child Rendered")
-  return (
-    <div>
-      <button onClick={onClick}>Click me</button>
-    </div>
-  );
+const ChildComponent = ({ onItemClick, label }) => {
+    const [childCount, setChildCount] = useState(0);
+
+    console.log(`Child Rendered - ${label} (child state: ${childCount})`);
+
+    return (
+      <div>
+        <button onClick={() => onItemClick('test item')}>Click me ({label})</button>
+        <button onClick={() => setChildCount(c => c + 1)}>
+          Child State: {childCount}
+        </button>
+      </div>
+    );
 };
 
 ChildComponent.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onItemClick: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
-export default ChildComponent;
+export default memo(ChildComponent);
